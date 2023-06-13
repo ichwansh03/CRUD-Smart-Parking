@@ -40,11 +40,12 @@ data class ParkingData(val id: Int, val name: String, val capacity: Int, val vol
 fun loadDataFromApi(context : Context, parkingList: MutableList<ParkingData>) {
     val requestQueue = Volley.newRequestQueue(LocalContext.current)
     val jsonArrayRequest = JsonArrayRequest(
-        //ubah URL pada bagian ini
+        //ubah URL pada bagian ini [ip address yang terhubung ke laptop atau pc/nama folder/nama file untuk get data]
         Request.Method.GET, "http://192.168.43.8/smart_parking/ict.php", null,
         { response ->
             for (i in 0 until response.length()) {
                 val parkingObject = response.getJSONObject(i)
+                //nama-nama field yang diambil dari tbl_ict
                 val id = parkingObject.getInt("id")
                 val name = parkingObject.getString("name")
                 val capacity = parkingObject.getInt("capacity")
