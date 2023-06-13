@@ -3,7 +3,7 @@
 	$host = "localhost";
 	$name = "root";
 	$pass = "";
-	$db = "db_smartparking";
+	$db = "db_smartparking"; //nama database anda
 
 	$conn = mysqli_connect($host, $name, $pass, $db);
 ?>
